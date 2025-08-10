@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+:root {
+  /* Background Colors */
+  --color-bg-light-primary: #ffffff; /* White, used for sections like About, Projects */
+  --color-bg-light-secondary: #fdf2f8; /* Tailwind's pink-50, used for Home, Skills, Contact */
+  --color-bg-dark-primary: #1a202c; /* Tailwind's gray-900 for main dark background */
+  --color-bg-dark-secondary: #2d3748; /* Tailwind's gray-800 for cards/secondary dark elements */
+  --color-bg-dark-tertiary: #171923; /* Tailwind's gray-950 for header/footer */
+
+
+  /* Text Colors */
+  --color-text-light: #1f2937; /* Tailwind's gray-900, light mode text */
+  --color-text-dark: #f9fafb; /* Tailwind's gray-50, dark mode text */
+  --color-text-muted-light: #6b7280; /* Tailwind's gray-500, light mode muted text */
+  --color-text-muted-dark: #9ca3af; /* Tailwind's gray-400, dark mode muted text */
+
+  /* Accent Colors (aligned with Tailwind pink palette) */
+  --color-accent-main: #ec4899; /* Tailwind's pink-500, for main headings, buttons */
+  --color-accent-light: #f9a8d4; /* Tailwind's pink-300, for typewriter border, subtle accents */
+  --color-accent-hover: #db2777; /* Tailwind's pink-600, for button hovers */
+
+  /* Borders */
+  --color-border-light: #e5e7eb; /* Tailwind's gray-200 */
+  --color-border-dark: #374151; /* Tailwind's gray-600 */
+
+  /* Fonts */
+  --font-sans: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Fira Code", "JetBrains Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* Theme variables for potential future use or consistency with other systems */
+@theme inline {
+  --color-background-light: var(--color-bg-light-primary);
+  --color-background-dark: var(--color-bg-dark-primary);
+  --color-foreground: var(--color-text-light);
+  --color-foreground-dark: var(--color-text-dark);
+  --color-accent: var(--color-accent-main);
+  --color-accent-dark: var(--color-accent-hover);
+  --color-muted: var(--color-text-muted-light);
+  --color-muted-dark: var(--color-text-muted-dark);
+  --color-border-light: var(--color-border-light);
+  --color-border-dark: var(--color-border-dark);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background: var(--color-bg-light-primary); /* Default to white */
+  color: var(--color-text-light); /* Default to gray-900 */
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Apply dark mode styles when the 'dark' class is present on the html element */
+html.dark {
+  /* Ensure the root HTML element also transitions its background/color if needed */
+  background: var(--color-bg-dark-primary);
+  color: var(--color-text-dark);
+}
+
+html.dark body {
+  background: var(--color-bg-dark-primary);
+  color: var(--color-text-dark);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--color-accent-main); /* Default link color (pink-500) */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+html.dark a {
+  color: var(--color-accent-light); /* Lighter accent for dark mode links (pink-300) */
+}
+
+a:hover {
+  color: var(--color-accent-hover); /* Darker pink on hover (pink-600) */
+  text-decoration: underline;
+}
+
+::selection {
+  background: var(--color-accent-light); /* Lighter accent for selection (pink-300) */
+  color: var(--color-bg-light-primary); /* White text on selection */
+}
+
+html.dark ::selection {
+  background: var(--color-accent-main); /* Main accent for dark mode selection (pink-500) */
+  color: var(--color-bg-dark-primary); /* Dark text on selection */
+}
+
+.section-title {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent-main); /* Main accent for titles (pink-500) */
+  margin: 2rem auto 3rem;
+  text-align: center;
+  width: fit-content;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 0.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 3rem;
+  background-color: var(--color-accent-main); /* Main accent for underline (pink-500) */
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  .section-title::after {
+    width: 100px;
+    top: 3.75rem;
+  }
+}
+
+/* Typewriter effect styles moved from page.tsx */
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid var(--color-accent-light); /* Using accent-light (pink-300) */
+  animation: typing 1.5s steps(8, end), blink-caret 0.75s step-end infinite;
+  width: 5.5em; /* Matches length of "Amna Ali" */
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 5.5em; }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--color-accent-light); } /* Using accent-light (pink-300) */
+}
+
+/* General layout classes - mostly handled by Tailwind in JSX, but included for completeness */
+.max-w-7xl {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem; /* Equivalent to px-6 */
+  padding-right: 1.5rem; /* Equivalent to px-6 */
+  max-width: 80rem; /* Equivalent to max-w-7xl */
+}
+
+@media (min-width: 1024px) { /* Equivalent to lg:px-8 */
+  .max-w-7xl {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.max-w-lg {
+  width: 100%;
+  max-width: 32rem; /* Tailwind's max-w-lg is 32rem */
+  margin-left: auto;
+  margin-right: auto;
+}
