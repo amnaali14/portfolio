@@ -171,3 +171,30 @@ html.dark ::selection {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Modern, accessible button styles */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-semibold leading-tight rounded-xl px-5 py-3 text-base transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500/80 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-pink-500 text-white hover:bg-pink-600 dark:bg-pink-600 dark:hover:bg-pink-500;
+  }
+
+  .btn-outline {
+    @apply border border-gray-300 text-gray-900 bg-white hover:bg-gray-50 dark:border-gray-600 dark:text-gray-50 dark:bg-transparent dark:hover:bg-gray-800;
+  }
+
+  .btn-ghost {
+    @apply text-pink-600 hover:bg-pink-50 dark:text-pink-300 dark:hover:bg-pink-900/30;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3.5 text-lg;
+  }
+
+  .btn-sm {
+    @apply px-3 py-2 text-sm;
+  }
+}
