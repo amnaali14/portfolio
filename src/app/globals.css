@@ -251,3 +251,10 @@ html.dark .btn-outline:hover {
   line-height: 1.5rem;
   border-radius: 9999px; /* pill */
 }
+
+.btn-xl {
+  padding: 1.125rem 2rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  border-radius: 9999px;
+}
