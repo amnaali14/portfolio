@@ -14,9 +14,8 @@ export default function Home() {
       if (savedTheme) {
         return savedTheme === 'dark';
       }
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
-    return false;
+    return false; // default to light when no saved preference exists
   });
 
   useEffect(() => {
@@ -63,7 +62,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen font-sans scroll-smooth">
+    <div className="min-h-screen font-sans scroll-smooth bg-white dark:bg-gray-900">
       {/* Navigation */}
       <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm dark:bg-gray-950/95">
         <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between py-4">
@@ -78,7 +77,7 @@ export default function Home() {
           </motion.a>
 
           {/* Desktop Navigation with Dark Mode Toggle */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             <ul className="flex items-center gap-8">
               {navLinks.map((link) => (
                 <motion.li
@@ -107,8 +106,9 @@ export default function Home() {
                 checked={darkMode}
                 onChange={toggleDarkMode}
               />
-              <div className="block bg-gray-300 w-9 h-5 rounded-full peer-checked:bg-pink-500 transition-colors duration-300 dark:bg-gray-600"></div>
-              <div className="dot absolute bg-white w-3 h-3 rounded-full transition-transform duration-300 peer-checked:translate-x-4 dark:bg-gray-300" style={{left: '4px', top: '50%', transform: 'translateY(-50%)'}}></div>
+              <div className="relative bg-gray-300 w-10 h-6 rounded-full transition-colors duration-300 dark:bg-gray-600 peer-checked:bg-black">
+                <div className="absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform duration-300 peer-checked:translate-x-4"></div>
+              </div>
             </label>
           </div>
 
@@ -123,7 +123,7 @@ export default function Home() {
                 checked={darkMode}
                 onChange={toggleDarkMode}
               />
-              <div className="block bg-gray-300 w-9 h-5 rounded-full peer-checked:bg-pink-500 transition-colors duration-300 dark:bg-gray-600 relative">
+              <div className="block bg-gray-300 w-9 h-5 rounded-full peer-checked:bg-black transition-colors duration-300 dark:bg-gray-600 relative">
                 <div className="dot absolute left-1 top-1 bg-white w-3 h-3 rounded-full transition-transform duration-300 peer-checked:translate-x-4 dark:bg-gray-300"></div>
               </div>
             </label>
@@ -169,7 +169,7 @@ export default function Home() {
       <main className="pt-20">
         {/* Home Section */}
         <section id="home" className="min-h-screen flex items-center justify-center bg-pink-50 dark:bg-gray-900">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8 grid gap-12 lg:grid-cols-2 items-center justify-items-center">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 grid gap-10 lg:grid-cols-2 items-center justify-items-center">
             <motion.div
               className="text-center max-w-md mx-auto"
               initial={{ opacity: 0, y: 30 }}
@@ -179,12 +179,12 @@ export default function Home() {
               <h1 className="text-4xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 text-gray-900 dark:text-gray-50">
                 Hi, I am <span className="text-pink-500 typewriter">Amna Ali</span>
               </h1>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed dark:text-gray-300">
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed dark:text-gray-300">
                 Full-Stack Developer | Crafting Seamless & Innovative Web Experiences
               </p>
               <motion.a
                 href="#contact"
-                className="btn btn-lg btn-primary shadow-md"
+                className="btn btn-xl btn-primary shadow-lg text-white"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -231,7 +231,7 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-24 bg-white flex items-center justify-center dark:bg-gray-800">
+        <section id="about" className="py-20 bg-white flex items-center justify-center dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <motion.h2
               className="text-4xl font-semibold mb-12 tracking-tight text-pink-500 section-title"
@@ -242,7 +242,7 @@ export default function Home() {
             >
               About Me
             </motion.h2>
-            <div className="grid gap-12 lg:grid-cols-2 items-center justify-items-center">
+            <div className="grid gap-10 lg:grid-cols-2 items-center justify-items-center">
               <motion.div
                 className="text-center max-w-md mx-auto"
                 initial={{ opacity: 0, x: -30 }}
@@ -289,7 +289,7 @@ export default function Home() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="py-24 bg-pink-50 flex items-center justify-center dark:bg-gray-900">
+        <section id="skills" className="py-20 bg-pink-50 flex items-center justify-center dark:bg-gray-900">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <motion.h2
               className="text-4xl font-semibold mb-12 tracking-tight text-pink-500 section-title"
@@ -339,7 +339,7 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="work" className="py-24 bg-white dark:bg-gray-800">
+        <section id="work" className="py-20 bg-white dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <motion.h2
               className="text-4xl font-semibold mb-16 tracking-tight text-pink-500 section-title"
@@ -488,7 +488,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-24 bg-pink-50 flex items-center justify-center dark:bg-gray-900">
+        <section id="contact" className="py-20 bg-pink-50 flex items-center justify-center dark:bg-gray-900">
           <div className="max-w-lg mx-auto px-6 lg:px-8 text-center">
             <motion.h2
               className="text-4xl font-semibold mb-12 tracking-tight text-pink-500 section-title"
