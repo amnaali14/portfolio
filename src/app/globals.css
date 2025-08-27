@@ -30,7 +30,7 @@
 }
 
 /* Theme variables for potential future use or consistency with other systems */
-@theme inline {
+/* 
   --color-background-light: var(--color-bg-light-primary);
   --color-background-dark: var(--color-bg-dark-primary);
   --color-foreground: var(--color-text-light);
@@ -43,7 +43,7 @@
   --color-border-dark: var(--color-border-dark);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
-}
+*/
 
 body {
   background: var(--color-bg-light-primary); /* Default to white */
