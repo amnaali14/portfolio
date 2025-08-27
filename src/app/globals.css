@@ -251,3 +251,18 @@ html.dark .btn-outline:hover {
   line-height: 1.5rem;
   border-radius: 9999px; /* pill */
 }
+
+/* CTA variant for prominent hero button */
+.btn-cta {
+  padding: 1.15rem 2rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  letter-spacing: 0.01em;
+}
+
+/* Ensure CTA text is white and high contrast */
+.btn-cta,
+.btn-cta:hover,
+.btn-cta:focus-visible {
+  color: #ffffff;
+}
