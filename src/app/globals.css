@@ -146,35 +146,95 @@ html.dark ::selection {
   cursor: not-allowed;
 }
 
+<<<<<<< HEAD
 .btn-primary {
   background-color: var(--color-accent);
   color: #ffffff;
   box-shadow: 0 3px 10px rgba(219, 39, 119, 0.2);
+=======
+/* Modern button utilities */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 150ms ease, box-shadow 200ms ease, background-color 150ms ease, color 150ms ease;
+  padding: 0.75rem 1rem; /* default md */
+  font-size: 0.95rem;
+  line-height: 1.25rem;
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(236, 72, 153, 0.25);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.btn-primary {
+  background-color: var(--color-accent-main);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(236, 72, 153, 0.25);
+>>>>>>> 1eb936e301715681e3352fb5ffbb82c0ab8cc0a0
 }
 
 .btn-primary:hover {
   background-color: var(--color-accent-hover);
+<<<<<<< HEAD
   box-shadow: 0 4px 12px rgba(219, 39, 119, 0.3);
+=======
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(236, 72, 153, 0.32);
+}
+
+html.dark .btn-primary {
+  background-color: var(--color-accent-main);
+  color: #ffffff;
+>>>>>>> 1eb936e301715681e3352fb5ffbb82c0ab8cc0a0
 }
 
 .btn-outline {
   background-color: transparent;
+<<<<<<< HEAD
   border: 1px solid var(--color-accent);
   color: var(--color-accent);
 }
 
 .btn-outline:hover {
   background-color: var(--color-accent);
+=======
+  color: var(--color-accent-main);
+  border: 2px solid var(--color-accent-main);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-accent-main);
+>>>>>>> 1eb936e301715681e3352fb5ffbb82c0ab8cc0a0
   color: #ffffff;
 }
 
 html.dark .btn-outline {
+<<<<<<< HEAD
   border-color: var(--color-accent-light);
   color: var(--color-accent-light);
+=======
+  color: var(--color-accent-light);
+  border-color: var(--color-accent-light);
+>>>>>>> 1eb936e301715681e3352fb5ffbb82c0ab8cc0a0
 }
 
 html.dark .btn-outline:hover {
   background-color: var(--color-accent-light);
+<<<<<<< HEAD
   color: var(--color-bg-dark);
 }
 
@@ -183,3 +243,28 @@ html.dark .btn-outline:hover {
   font-size: 1rem;
   border-radius: 0.625rem;
 }
+=======
+  color: var(--color-bg-dark-primary);
+}
+
+.btn-sm {
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  border-radius: 0.625rem;
+}
+
+.btn-lg {
+  padding: 1rem 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.5rem;
+  border-radius: 9999px; /* pill */
+}
+
+.btn-xl {
+  padding: 1.125rem 2rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  border-radius: 9999px;
+}
+>>>>>>> 1eb936e301715681e3352fb5ffbb82c0ab8cc0a0
