@@ -1,3 +1,4 @@
+/* globals.css */
 @import "tailwindcss";
 
 :root {
@@ -6,11 +7,13 @@
   --color-bg-light-alt: #faf5ff; /* Subtle pink-50 alternative for sections */
   --color-bg-dark: #0f172a; /* Slate-900 for dark mode */
   --color-bg-dark-alt: #1e293b; /* Slate-800 for dark mode cards */
+  --color-bg-dark-primary: #0f172a; /* Slate-900 for dark mode primary */
   --color-text-light: #0f172a; /* Slate-900 for text */
   --color-text-dark: #f1f5f9; /* Slate-100 for dark mode text */
   --color-text-muted-light: #64748b; /* Slate-500 for muted text */
   --color-text-muted-dark: #94a3b8; /* Slate-400 for dark mode muted text */
   --color-accent: #db2777; /* Pink-600 for primary accents */
+  --color-accent-main: #ec4899; /* Pink-500 for main accents */
   --color-accent-hover: #be185d; /* Pink-700 for hover states */
   --color-accent-light: #f9a8d4; /* Pink-300 for subtle accents */
   --color-border-light: #e2e8f0; /* Slate-200 for borders */
@@ -19,6 +22,267 @@
   /* Fonts */
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "Fira Code", Menlo, Monaco, Consolas, monospace;
+}
+
+/* Global center alignment for all text */
+body, h1, h2, h3, h4, h5, h6, p, span, div {
+  text-align: center !important;
+}
+
+/* Ensure all sections are center-aligned */
+section {
+  text-align: center !important;
+}
+
+/* Force center alignment for section titles */
+.section-title,
+h2[class*="text-4xl"],
+h2[class*="font-semibold"] {
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 4rem !important;
+  margin-top: 2rem !important;
+}
+
+/* Add spacing between sections */
+section {
+  text-align: center !important;
+  margin-bottom: 3rem !important;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* Add extra spacing for specific sections */
+#about, #skills, #work, #contact {
+  margin-bottom: 4rem !important;
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+/* Add spacing between section content and next section */
+section > div {
+  margin-bottom: 2rem !important;
+}
+
+/* Add spacing after section titles */
+section h2 {
+  margin-bottom: 3rem !important;
+}
+
+/* Add spacing between grid items */
+.grid {
+  gap: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Add spacing between cards */
+.rounded-xl, .rounded-lg {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Add spacing for the main container */
+main {
+  text-align: center !important;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* Add spacing for the footer */
+footer {
+  margin-top: 3rem !important;
+  padding-top: 2rem !important;
+}
+
+/* Add spacing between Get in Touch button and social icons */
+.btn-primary {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Add spacing for social media icons section */
+.flex.gap-6 {
+  margin-top: 0.5rem !important;
+  padding-top: 0.25rem !important;
+}
+
+/* Add spacing around social media icons */
+.flex.gap-6 a {
+  margin: 0 0.25rem !important;
+  padding: 0.25rem !important;
+}
+
+/* Add spacing for the entire social icons container */
+.flex.gap-6.mt-8 {
+  margin-top: 1rem !important;
+  padding-top: 0.5rem !important;
+  border-top: none !important;
+}
+
+/* Add spacing for the home section content */
+#home .flex.gap-6 {
+  margin-top: 1rem !important;
+  padding-top: 0.5rem !important;
+}
+
+/* Add spacing for the button container */
+.motion.a[href="#contact"] {
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+}
+
+/* Add spacing for the description text above the button */
+.text-lg.text-gray-600.mb-8 {
+  margin-bottom: 1rem !important;
+}
+
+/* Ensure "Hi, I'm Amna Ali" appears on one line */
+h1.text-4xl.lg\:text-6xl,
+h1.text-4xl.lg\:text-6xl span,
+h1.text-4xl.lg\:text-6xl .typewriter {
+  white-space: nowrap !important;
+  display: inline !important;
+  line-height: 1.2 !important;
+}
+
+/* Prevent line breaks in the main heading */
+h1.text-4xl.lg\:text-6xl.font-bold {
+  white-space: nowrap !important;
+  overflow: visible !important; /* Changed from hidden to visible */
+  text-overflow: clip !important; /* Changed from ellipsis to clip */
+}
+
+/* Ensure the typewriter effect stays on one line */
+.typewriter {
+  white-space: nowrap !important;
+  display: inline !important;
+  overflow: visible !important; /* Changed from hidden to visible */
+}
+
+/* Force single line for the main heading container */
+h1.text-4xl.lg\:text-6xl.font-bold.tracking-tight.leading-tight.mb-6 {
+  white-space: nowrap !important;
+  display: block !important;
+  width: auto !important; /* Changed from 100% to auto */
+  overflow: visible !important; /* Changed from hidden to visible */
+  min-width: fit-content !important; /* Ensure full text fits */
+}
+
+/* Make subtitle smaller to make main title more prominent */
+.text-lg.text-gray-600.mb-8,
+.text-lg.text-gray-600.dark\:text-gray-300.mb-8,
+p.text-lg.text-gray-600.mb-8,
+p.text-lg.text-gray-600.dark\:text-gray-300.mb-8 {
+  font-size: 0.875rem !important; /* Reduce from text-lg to text-sm */
+  line-height: 1.4 !important;
+  margin-bottom: 1rem !important;
+  opacity: 0.8 !important;
+}
+
+/* Ensure the main title is more prominent */
+h1.text-4xl.lg\:text-6xl.font-bold.tracking-tight.leading-tight.mb-6 {
+  font-weight: 800 !important; /* Make it bolder */
+  letter-spacing: -0.025em !important; /* Tighter letter spacing */
+  margin-bottom: 1.5rem !important; /* Reduce bottom margin */
+}
+
+/* Center all grid and flex content */
+.grid, .flex {
+  text-align: center !important;
+}
+
+/* Center all cards and content containers */
+.bg-white, .bg-gray-800, .bg-gray-700, .bg-pink-50, .bg-gray-900 {
+  text-align: center !important;
+}
+
+/* Center all project cards and their content */
+.bg-white.dark\:bg-gray-700,
+.bg-white.dark\:bg-gray-800,
+.bg-pink-50.dark\:bg-gray-900 {
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+/* Center all skill cards */
+.bg-white.dark\:bg-gray-800 {
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+/* Center footer content */
+footer, .bg-gray-900, .bg-gray-950 {
+  text-align: center !important;
+}
+
+/* Center all form elements */
+form, input, textarea, button {
+  text-align: center !important;
+}
+
+/* Center all navigation elements */
+nav, header {
+  text-align: center !important;
+}
+
+/* Force center alignment for specific content areas */
+.max-w-6xl, .max-w-7xl, .max-w-4xl, .max-w-lg {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Center all grid items */
+.grid > * {
+  text-align: center !important;
+  justify-self: center !important;
+}
+
+/* Center all flex items */
+.flex > * {
+  text-align: center !important;
+}
+
+/* Center all card content specifically */
+.rounded-xl, .rounded-lg, .shadow-lg, .shadow-xl {
+  text-align: center !important;
+}
+
+/* Center all text content within cards */
+.p-6, .p-8 {
+  text-align: center !important;
+}
+
+/* Center all buttons and interactive elements */
+.btn, button, a {
+  text-align: center !important;
+}
+
+/* Center all progress bars and skill indicators */
+.bg-pink-500, .bg-gray-200, .bg-gray-700 {
+  text-align: center !important;
+}
+
+/* Center all technology tags and badges */
+.bg-pink-100, .bg-gray-100, .bg-pink-900, .bg-gray-900 {
+  text-align: center !important;
+}
+
+/* Center all form inputs and placeholders */
+input::placeholder, textarea::placeholder {
+  text-align: center !important;
+}
+
+/* Center all social media icons and links */
+.flex.justify-center {
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+/* Center all contact information */
+.text-pink-500, .text-pink-600, .text-gray-600, .text-gray-300 {
+  text-align: center !important;
 }
 
 body {
@@ -30,7 +294,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.2s ease, color 0.2s ease;
-  text-align: center;
 }
 
 html.dark {
@@ -77,9 +340,11 @@ html.dark ::selection {
   font-size: 2rem;
   font-weight: 700;
   color: var(--color-accent);
-  text-align: center;
-  margin-bottom: 3rem; /* Increased spacing below titles */
+  text-align: center !important;
+  margin-bottom: 3rem;
   position: relative;
+  display: block !important;
+  width: 100% !important;
 }
 
 .section-title::after {
@@ -96,7 +361,7 @@ html.dark ::selection {
 @media (min-width: 768px) {
   .section-title {
     font-size: 2.25rem;
-    margin-bottom: 3.5rem; /* Increased spacing for larger screens */
+    margin-bottom: 3.5rem;
   }
   .section-title::after {
     width: 70px;
@@ -122,36 +387,6 @@ html.dark ::selection {
   50% { border-color: var(--color-accent-light); }
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  font-size: 0.9rem;
-  padding: 0.75rem 1.25rem;
-  transition: all 0.15s ease;
-  cursor: pointer;
-  text-align: center;
-}
-
-.btn:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(219, 39, 119, 0.3);
-}
-
-.btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-<<<<<<< HEAD
-.btn-primary {
-  background-color: var(--color-accent);
-  color: #ffffff;
-  box-shadow: 0 3px 10px rgba(219, 39, 119, 0.2);
-=======
 /* Modern button utilities */
 .btn {
   display: inline-flex;
@@ -184,14 +419,10 @@ html.dark ::selection {
   background-color: var(--color-accent-main);
   color: #ffffff;
   box-shadow: 0 8px 20px rgba(236, 72, 153, 0.25);
->>>>>>> 1eb936e301715681e3352fb5ffbb82c0ab8cc0a0
 }
 
 .btn-primary:hover {
   background-color: var(--color-accent-hover);
-<<<<<<< HEAD
-  box-shadow: 0 4px 12px rgba(219, 39, 119, 0.3);
-=======
   transform: translateY(-1px);
   box-shadow: 0 10px 24px rgba(236, 72, 153, 0.32);
 }
@@ -199,51 +430,26 @@ html.dark ::selection {
 html.dark .btn-primary {
   background-color: var(--color-accent-main);
   color: #ffffff;
->>>>>>> 1eb936e301715681e3352fb5ffbb82c0ab8cc0a0
 }
 
 .btn-outline {
   background-color: transparent;
-<<<<<<< HEAD
-  border: 1px solid var(--color-accent);
-  color: var(--color-accent);
-}
-
-.btn-outline:hover {
-  background-color: var(--color-accent);
-=======
   color: var(--color-accent-main);
   border: 2px solid var(--color-accent-main);
 }
 
 .btn-outline:hover {
   background-color: var(--color-accent-main);
->>>>>>> 1eb936e301715681e3352fb5ffbb82c0ab8cc0a0
   color: #ffffff;
 }
 
 html.dark .btn-outline {
-<<<<<<< HEAD
-  border-color: var(--color-accent-light);
-  color: var(--color-accent-light);
-=======
   color: var(--color-accent-light);
   border-color: var(--color-accent-light);
->>>>>>> 1eb936e301715681e3352fb5ffbb82c0ab8cc0a0
 }
 
 html.dark .btn-outline:hover {
   background-color: var(--color-accent-light);
-<<<<<<< HEAD
-  color: var(--color-bg-dark);
-}
-
-.btn-lg {
-  padding: 0.875rem 1.75rem;
-  font-size: 1rem;
-  border-radius: 0.625rem;
-}
-=======
   color: var(--color-bg-dark-primary);
 }
 
@@ -267,4 +473,246 @@ html.dark .btn-outline:hover {
   line-height: 1.75rem;
   border-radius: 9999px;
 }
->>>>>>> 1eb936e301715681e3352fb5ffbb82c0ab8cc0a0
+
+/* Enhanced animations and visual improvements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Enhanced typography hierarchy */
+h1.text-4xl.lg\:text-6xl.font-bold.tracking-tight.leading-tight.mb-6 {
+  font-weight: 900 !important; /* Extra bold for more prominence */
+  letter-spacing: -0.03em !important; /* Tighter letter spacing */
+  margin-bottom: 2rem !important; /* Better spacing */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow */
+  animation: fadeInUp 0.8s ease-out !important;
+}
+
+/* Enhanced subtitle styling */
+.text-lg.text-gray-600.mb-8,
+.text-lg.text-gray-600.dark\:text-gray-300.mb-8,
+p.text-lg.text-gray-600.mb-8,
+p.text-lg.text-gray-600.dark\:text-gray-300.mb-8 {
+  font-size: 1rem !important; /* Slightly larger for better readability */
+  line-height: 1.6 !important;
+  margin-bottom: 2.5rem !important; /* Better spacing */
+  opacity: 0.9 !important;
+  font-weight: 500 !important; /* Medium weight for better hierarchy */
+  animation: fadeInUp 0.8s ease-out 0.2s both !important; /* Staggered animation */
+}
+
+/* Enhanced button styling */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-accent-main), var(--color-accent-hover)) !important;
+  border: none !important;
+  box-shadow: 0 8px 25px rgba(236, 72, 153, 0.3) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  animation: fadeInUp 0.8s ease-out 0.4s both !important;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--color-accent-hover), var(--color-accent-main)) !important;
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 12px 35px rgba(236, 72, 153, 0.4) !important;
+}
+
+/* Enhanced social media icons */
+.flex.gap-6 a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  animation: fadeInUp 0.8s ease-out 0.6s both !important;
+}
+
+.flex.gap-6 a:hover {
+  transform: translateY(-5px) scale(1.1) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Enhanced profile image */
+.rounded-full {
+  animation: fadeInRight 1s ease-out 0.3s both !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.rounded-full:hover {
+  animation: float 3s ease-in-out infinite !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Enhanced navigation */
+nav a {
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  animation: fadeInUp 0.8s ease-out 0.1s both !important;
+}
+
+nav a::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -5px !important;
+  left: 50% !important;
+  width: 0 !important;
+  height: 2px !important;
+  background: var(--color-accent-main) !important;
+  transition: all 0.3s ease !important;
+  transform: translateX(-50%) !important;
+}
+
+nav a:hover::after {
+  width: 100% !important;
+}
+
+/* Enhanced dark mode toggle */
+.peer {
+  transition: all 0.3s ease !important;
+  animation: fadeInUp 0.8s ease-out 0.1s both !important;
+}
+
+.peer:hover {
+  transform: scale(1.05) !important;
+}
+
+/* Enhanced section titles */
+.section-title {
+  animation: fadeInUp 0.8s ease-out !important;
+  position: relative !important;
+}
+
+.section-title::after {
+  animation: fadeInUp 0.8s ease-out 0.3s both !important;
+  width: 0 !important;
+  transition: width 0.8s ease-out 0.3s !important;
+}
+
+.section-title.animate::after {
+  width: 70px !important;
+}
+
+/* Enhanced cards and content */
+.bg-white, .bg-gray-800, .bg-gray-700, .bg-pink-50, .bg-gray-900 {
+  transition: all 0.3s ease !important;
+  animation: fadeInUp 0.8s ease-out !important;
+}
+
+.bg-white:hover, .bg-gray-800:hover, .bg-gray-700:hover, .bg-pink-50:hover, .bg-gray-900:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Enhanced form elements */
+input, textarea {
+  transition: all 0.3s ease !important;
+  border: 2px solid transparent !important;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--color-accent-main) !important;
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1) !important;
+  transform: scale(1.02) !important;
+}
+
+/* Enhanced scroll indicator */
+.scroll-indicator {
+  position: absolute !important;
+  bottom: 2rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  animation: fadeInUp 0.8s ease-out 1s both, float 2s ease-in-out infinite 1.5s !important;
+}
+
+.scroll-indicator::before {
+  content: '↓' !important;
+  font-size: 1.5rem !important;
+  color: var(--color-accent-main) !important;
+  opacity: 0.7 !important;
+}
+
+/* Enhanced background pattern */
+.hero-pattern {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: radial-gradient(circle at 25% 25%, rgba(236, 72, 153, 0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.03) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+/* Enhanced responsive design */
+@media (max-width: 768px) {
+  h1.text-4xl.lg\:text-6xl.font-bold.tracking-tight.leading-tight.mb-6 {
+    font-size: 2.5rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  .text-lg.text-gray-600.mb-8 {
+    font-size: 0.875rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .btn-primary {
+    padding: 0.875rem 1.5rem !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Enhanced dark mode transitions */
+html.dark * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* Enhanced focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-accent-main) !important;
+  outline-offset: 2px !important;
+  border-radius: 4px !important;
+}
